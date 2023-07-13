@@ -1,0 +1,33 @@
+using UnityEngine;
+
+namespace ChaChaGames.FSMBuilder
+{
+    [CreateAssetMenu(menuName = "Finite State Machine/Player/Decision/..../....", fileName = "new .... Decision")]
+    public class #SCRIPTNAME# : Decision
+    {
+        #region PROPERTIES
+         
+        #endregion
+                
+        #region EVENT FUNCTIONS
+        
+        #endregion
+                
+        #region IMPLEMENTED FUNCTIONS
+        
+        public override bool Decide(StateController controller)
+        {
+            return false;
+        }             
+         
+        #endregion  
+        
+        #region PUBLIC FUNCTIONS
+        
+        #endregion  
+                
+        #region PRIVATE FUNCTIONS
+        
+        #endregion
+    }
+}
