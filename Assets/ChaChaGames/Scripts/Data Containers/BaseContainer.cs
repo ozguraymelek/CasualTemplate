@@ -1,5 +1,6 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ChaChaGames.Scripts.Data_Containers
 {
@@ -24,6 +25,17 @@ namespace ChaChaGames.Scripts.Data_Containers
 
         [TabGroup("A", "Art")] 
         public Animator animator;
+        
+        [TabGroup("C", "Runtime")] 
+        public bool HasTarget;
+
+        [FormerlySerializedAs("Radius")] [TabGroup("C", "Attack")] [Tooltip("radius of target area")]
+        public float Range;
+        [TabGroup("C", "Attack")] [Tooltip("radius of target area")][Range(0,360)]
+        public float FOV;
+        [FormerlySerializedAs("FOV")] [TabGroup("C", "Attack")] [Tooltip("radius of target area")][Range(0,360)][Indent(2)]
+        public float CurrentFOV;
+
         
         #endregion
     }

@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 425637968}
   - component: {fileID: 425637969}
   - component: {fileID: 425637970}
+  - component: {fileID: 425637971}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -958,7 +959,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentState: {fileID: 0}
   InitialState: {fileID: 11400000, guid: a1a06714856861646b382fbe5062a589, type: 2}
-  data: {fileID: 0}
+  data: {fileID: 425637971}
+--- !u!114 &425637971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425637965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04d7b26d9f04ef597743b07f0caae90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  walkSpeed: 0
+  runSpeed: 0
+  rotateSpeed: 0
+  collider: {fileID: 0}
+  rigidbody: {fileID: 0}
+  animator: {fileID: 0}
+  HasTarget: 0
+  Range: 30
+  FOV: 50
+  CurrentFOV: 50
+  VerticalInput: {fileID: 0}
+  HorizontalInput: {fileID: 0}
+  MovementVector: {fileID: 0}
+  activeTargetCount: 0
+  detectedTargets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &432809454
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ namespace ChaChaGames.Controllers
         public BaseState InitialState;
 
         [TabGroup("Data")] 
-        public BaseContainer data;
+        public PlayerData data;
 
         #region EVENT FUNCTIONS
 
@@ -29,6 +29,36 @@ namespace ChaChaGames.Controllers
             CurrentState.Updating(this);
         }
 
+        void OnDrawGizmos()
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawWireSphere(transform.position, data.Range);
+
+            Vector3 viewAngle01 = DirectionFromAngle(transform.eulerAngles.y, -data.CurrentFOV / 2);
+            Vector3 viewAngle02 = DirectionFromAngle(transform.eulerAngles.y, data.CurrentFOV / 2);
+
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position,
+                transform.position + viewAngle01 * data.Range);
+            Gizmos.DrawLine(transform.position,
+                transform.position + viewAngle02 * data.Range);
+
+            if (data.HasTarget)
+            {
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(transform.position, data.CurrentTarget.GetTransform().position);
+            }
+        }
+        
+        #endregion
+        
+        #region PRIVATE FUNCTIONS
+        private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
+        {
+            angleInDegrees += eulerY;
+
+            return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+        }
         #endregion
     }
 }
